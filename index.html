@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>义乌城市元旦游 · 景点详解 + 2.5日攻略</title>
+  <meta name="description" content="义乌市旅游全指南：佛堂老街、义乌国际商贸城、1970文创园、韩国风情街、鸡鸣阁夜景、宾王夜市、义乌天地、月湖公园、义乌市博物馆，含2.5日详细行程攻略与旅行小贴士。">
+  <style>
+    :root{
+      --bg:#fff5f0;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --text:#1f2937;
+      --accent:#ef4444;   /* 圣诞红主色 */
+      --accent2:#10b981;  /* 圣诞绿副色 */
+      --warning:#f59e0b;  /* 琥珀提醒色 */
+      --ok:#10b981;       /* 圣诞绿，表示"完成/推荐" */
+      --shadow:0 16px 40px rgba(0,0,0,.08);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;padding:0;
+      background:
+        linear-gradient(135deg, #fff5f0 0%, #ffe4d6 50%, #ffd4c4 100%);
+      color:var(--text);
+      font:400 16px/1.6 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,"SF Pro Text","Noto Sans CJK SC",Segoe UI,Roboto,Arial,sans-serif;
+      position:relative;
+      overflow-x:hidden;
+    }
+    /* 圣诞雪花和星星动画背景 */
+    .snowflake, .star{
+      position:fixed;
+      pointer-events:none;
+      user-select:none;
+      z-index:9999;
+      top:0;
+    }
+    .snowflake{
+      animation:snowfall linear infinite;
+    }
+    .star{
+      animation:starfall linear infinite;
+    }
+    @keyframes snowfall{
+      0%{transform:translateY(0) rotate(0deg);opacity:0}
+      10%{opacity:0.6}
+      90%{opacity:0.6}
+      100%{transform:translateY(100vh) rotate(360deg);opacity:0}
+    }
+    @keyframes starfall{
+      0%{transform:translateY(0) rotate(0deg) scale(0);opacity:0}
+      10%{opacity:0.8}
+      90%{opacity:0.8}
+      100%{transform:translateY(100vh) rotate(180deg) scale(1);opacity:0}
+    }
+    a{color:var(--accent);text-decoration:none}
+    .wrap{max-width:960px;margin:0 auto;padding:0 18px}
+    /* 顶部导航 */
+    .nav{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:saturate(160%) blur(10px);
+      background:rgba(255,255,255,.85);
+      border-bottom:1px solid rgba(239,68,68,.15);
+      box-shadow:0 4px 12px rgba(239,68,68,.08);
+    }
+    .nav .bar{display:flex;align-items:center;gap:10px;padding:10px 16px}
+    .nav .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .brand .dot{
+      width:10px;height:10px;border-radius:50%;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      animation:pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse{
+      0%,100%{transform:scale(1);opacity:1}
+      50%{transform:scale(1.2);opacity:.8}
+    }
+    .nav .links{margin-left:auto;display:flex;gap:12px}
+    .links a{
+      padding:8px 12px;border-radius:10px;
+      background:rgba(239,68,68,.08);
+      transition:all .3s ease;
+    }
+    .links a:hover{
+      background:rgba(239,68,68,.15);
+      transform:translateY(-2px);
+    }
+    /* 英雄封面 */
+    .hero{
+      padding:26px 0 20px;
+      background:
+        radial-gradient(1200px 500px at 10% -40%, rgba(239,68,68,.15) 0, transparent 60%),
+        radial-gradient(900px 400px at 90% -30%, rgba(16,185,129,.12) 0, transparent 55%);
+      position:relative;
+    }
+    .hero .card{
+      display:grid;gap:16px;padding:20px;border-radius:var(--radius);
+      background:linear-gradient(180deg,rgba(255,255,255,.95),rgba(255,255,255,.85));
+      box-shadow:0 8px 32px rgba(239,68,68,.12);
+      border:1px solid rgba(239,68,68,.2);
+      animation:fadeInUp .6s ease-out;
+    }
+    @keyframes fadeInUp{
+      from{opacity:0;transform:translateY(20px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+    .hero h1{margin:0;font-size:28px;line-height:1.3}
+    @media(max-width:640px){
+      .hero h1{font-size:22px}
+      .hero .card{padding:16px}
+    }
+    .hero p{margin:0;color:var(--muted)}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    @media(max-width:640px){
+      .chip{
+        font-size:12px;
+        padding:5px 9px;
+      }
+    }
+    .chip{
+      padding:6px 10px;border-radius:999px;
+      background:linear-gradient(135deg,rgba(239,68,68,.1),rgba(16,185,129,.1));
+      font-size:13px;
+      border:1px solid rgba(239,68,68,.2);
+      transition:all .3s ease;
+    }
+    .chip:hover{
+      transform:translateY(-2px);
+      box-shadow:0 4px 12px rgba(239,68,68,.2);
+    }
+    .cta{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+    @media(max-width:640px){
+      .cta{gap:8px}
+      .btn{
+        font-size:14px;
+        padding:9px 12px;
+      }
+    }
+    .btn{
+      padding:10px 14px;border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),#f87171);
+      color:#fff;font-weight:700;border:none;
+      box-shadow:0 4px 12px rgba(239,68,68,.3);
+      transition:all .3s ease;
+    }
+    .btn:hover{
+      transform:translateY(-3px);
+      box-shadow:0 8px 20px rgba(239,68,68,.4);
+    }
+    .btn.alt{
+      background:linear-gradient(135deg,var(--accent2),#34d399);
+      color:#fff;
+      box-shadow:0 4px 12px rgba(16,185,129,.3);
+    }
+    .btn.alt:hover{
+      box-shadow:0 8px 20px rgba(16,185,129,.4);
+    }
+    /* 分区标题 */
+    section{padding:24px 0}
+    .title{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+    .title h2{margin:0;font-size:22px;line-height:1.4}
+    @media(max-width:640px){
+      .title h2{font-size:19px}
+    }
+    .title .barline{flex:1;height:1px;background:linear-gradient(90deg,rgba(255,255,255,.15),transparent)}
+    /* 景点卡片 */
+    .grid{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
+    .card{
+      display:grid;gap:12px;padding:14px;border-radius:16px;
+      background:rgba(255,255,255,.9);
+      border:1px solid rgba(239,68,68,.15);
+      box-shadow:0 4px 16px rgba(0,0,0,.06);
+      transition:all .3s ease;
+    }
+    .card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 12px 28px rgba(239,68,68,.15);
+      border-color:rgba(239,68,68,.3);
+    }
+    .card h3{margin:0;font-size:18px;line-height:1.4}
+    @media(max-width:640px){
+      .card h3{font-size:17px}
+      .card{padding:12px}
+    }
+    .tagline{color:var(--muted);font-size:14px}
+    .gallery{
+      display:flex;gap:8px;overflow:auto;scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling:touch;
+      scrollbar-width:thin;
+      scrollbar-color:rgba(239,68,68,.3) transparent;
+    }
+    .gallery::-webkit-scrollbar{height:4px}
+    .gallery::-webkit-scrollbar-track{background:transparent}
+    .gallery::-webkit-scrollbar-thumb{background:rgba(239,68,68,.3);border-radius:2px}
+    .gallery img{
+      width:240px;height:150px;object-fit:cover;border-radius:12px;scroll-snap-align:center;
+      background:#f3f4f6;border:1px solid rgba(239,68,68,.15);
+      flex-shrink:0;
+    }
+    @media(max-width:640px){
+      .gallery img{width:200px;height:130px}
+    }
+    .sub{font-weight:700;margin-top:4px}
+    ul{margin:6px 0 0 18px;padding:0}
+    li{margin:6px 0}
+    /* 行程时间轴 */
+    .timeline{display:grid;gap:14px}
+    .day{
+      border-left:4px solid var(--accent);
+      padding:12px 14px;margin-left:4px;border-radius:12px;
+      background:rgba(255,255,255,.6);
+      box-shadow:0 2px 8px rgba(239,68,68,.08);
+      transition:all .3s ease;
+    }
+    .day:hover{
+      background:rgba(255,255,255,.8);
+      box-shadow:0 4px 16px rgba(239,68,68,.12);
+    }
+    .day .when{
+      font-weight:800;
+      font-size:16px;
+      line-height:1.4;
+      margin-bottom:12px;
+      padding-bottom:8px;
+      border-bottom:1px solid rgba(239,68,68,.15);
+    }
+    .slot{
+      display:grid;
+      grid-template-columns:auto 1fr;
+      gap:10px;
+      margin:10px 0;
+      align-items:start;
+    }
+    .slot .time{
+      color:var(--warning);
+      font-weight:700;
+      font-size:13px;
+      white-space:nowrap;
+      padding:4px 8px;
+      background:rgba(245,158,11,.1);
+      border-radius:6px;
+      border:1px solid rgba(245,158,11,.2);
+    }
+    .slot .desc{
+      flex:1;
+      line-height:1.6;
+    }
+    .slot .poi{
+      color:var(--ok);
+      font-weight:600;
+    }
+    /* 移动端优化 */
+    @media(max-width:640px){
+      .day .when{font-size:15px}
+      .slot{gap:8px;margin:8px 0}
+      .slot .time{
+        font-size:12px;
+        padding:3px 6px;
+      }
+      .slot .desc{font-size:14px}
+    }
+    /* 底部与浮动按钮 */
+    footer{padding:30px 0;color:var(--muted);text-align:center}
+    .float{
+      position:fixed;bottom:18px;right:18px;z-index:60;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      color:#fff;border-radius:999px;padding:12px 16px;font-weight:800;
+      box-shadow:0 8px 24px rgba(239,68,68,.4);
+      animation:float 3s ease-in-out infinite;
+      transition:all .3s ease;
+      font-size:14px;
+    }
+    @media(max-width:640px){
+      .float{
+        bottom:12px;right:12px;
+        padding:10px 14px;
+        font-size:13px;
+      }
+    }
+    .float:hover{
+      transform:scale(1.05);
+      box-shadow:0 12px 32px rgba(239,68,68,.5);
+    }
+    @keyframes float{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-8px)}
+    }
+    .note{color:var(--muted);font-size:14px}
+    /* 可访问性 */
+    img{font-style:italic}
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap bar">
+      <div class="brand"><span class="dot"></span> 义乌城市元旦游</div>
+      <div class="links">
+        <a href="#spots">景点</a>
+        <a href="#plan">行程</a>
+        <a href="#tips">贴士</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="card">
+        <h1>义乌市旅游全指南 · 景点详解 + 2.5日行程攻略（鸡鸣阁夜游版）</h1>
+        <p>从明清古韵到国际商贸、从潮流文创到市井烟火，一次轻盈而丰富的城市微旅行 🏯🏙️🎨🍢✨</p>
+        <div class="chips">
+          <span class="chip">夜游鸡鸣阁</span>
+          <span class="chip">佛堂老街夜色</span>
+          <span class="chip">国际商贸见识</span>
+          <span class="chip">1970仓改文创</span>
+          <span class="chip">宾王夜市美食</span>
+          <span class="chip">月湖公园漫步</span>
+        </div>
+        <div class="cta">
+          <a class="btn" href="#plan">立即查看 2.5 日行程</a>
+          <a class="btn alt" href="#spots">先看景点亮点</a>
+        </div>
+        <p class="note">图片来源：高德地图POI用户照片（如图裂请稍后刷新或切换网络）</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- 景点区 -->
+    <section id="spots">
+      <div class="title"><h2>热门景点 · 生动介绍</h2><div class="barline"></div></div>
+      <div class="grid">
+
+        <!-- 佛堂老街 -->
+        <article class="card">
+          <h3>佛堂老街</h3>
+          <div class="tagline">明清古风 · 夜色迷人 · 文艺茶馆与手作店</div>
+          <div class="gallery">
+            <img src="http://aos-cdn-image.amap.com/sns/ugccomment/03b35707-bf48-4add-a6b7-67663f65f676.jpg" alt="佛堂老街夜景">
+            <img src="https://aos-comment.amap.com/B0LK45VVXV/comment/%5B2025-12-21-20-34-19%5D352832FE-EE4B-45A7-81F6-CBC6A42C0EA_1766320461145_93597406.jpg" alt="佛堂古镇牌坊">
+          </div>
+          <div class="sub">亮点速览</div>
+          <ul>
+            <li>牌坊、古戏台、廊桥与老宅相映，夜间暖黄灯光氛围感强。</li>
+            <li>河岸与茶馆出片友好，文创小店与非遗体验值得停留。</li>
+          </ul>
+          <div class="sub">建议玩法</div>
+          <ul>
+            <li>慢游线：牌坊 → 古戏台 → 沿河小景 → 文艺小店/茶馆。</li>
+            <li>打卡糖画/剪纸，收集文创明信片盖章。</li>
+          </ul>
+          <div class="sub">旅行小贴士</div>
+          <ul>
+            <li>节假日傍晚后人气高，建议错峰或提前到达。</li>
+            <li>复古或清新穿搭更出片；手机夜景模式友好。</li>
+          </ul>
+        </article>
+
+        <!-- 义乌国际商贸城 -->
+        <article class="card">
+          <h3>义乌国际商贸城</h3>
+          <div class="tagline">全球小商品之都 · 见识潮流 · 支持拿样与快递</div>
+          <div class="gallery">
+            <img src="https://aos-comment.amap.com/B024314LVR/comment/57D9512E_FEEB_4775_ADAE_A42C13D52A4B_L0_001_1290_163_1755293542076_08211821.jpg" alt="义乌国际商贸城外景">
+            <img src="https://aos-comment.amap.com/B024318PEQ/comment/content_media_external_file_1000033382_ss__1763733855801_17137257.jpg" alt="商贸城一区">
+            <img src="https://aos-comment.amap.com/B024314DNZ/comment/FEA2E16F_4461_4977_A9BD_F3A05C2B70F9_L0_001_828_1081_1729904794428_84980186.jpg" alt="商贸城四区">
+          </div>
+          <div class="sub">亮点速览</div>
+          <ul>
+            <li>按品类分区，门类极全；采购与长见识两不误。</li>
+            <li>商务友好，名片/微信方便后续议价发货。</li>
+          </ul>
+          <div class="sub">建议玩法</div>
+          <ul>
+            <li>目标清单式逛法：文具、家居、美妆配件、服饰辅料等。</li>
+            <li>现场快递网点密集，支持当日寄送。</li>
+          </ul>
+          <div class="sub">旅行小贴士</div>
+          <ul>
+            <li>穿舒适鞋、带双肩包与水；多数为白天营业，以现场公告为准。</li>
+            <li>容易“买嗨”，为预算设置上限与优先级。</li>
+          </ul>
+        </article>
+
+        <!-- 1970文创园 -->
+        <article class="card">
+          <h3>1970文创园（老车站）</h3>
+          <div class="tagline">仓改文创 · 工业风 · 展览/市集/咖啡/Live</div>
+          <div class="gallery">
+            <img src="https://aos-comment.amap.com/B0FFGIJILB/comment/content_media_external_images_media_1000052991_ss__1755071009835_30402177.jpg" alt="1970文创园入口">
+            <img src="https://aos-comment.amap.com/B0LGV1YJVE/comment/content_media_external_file_1000007938_ss__1759229947819_87089482.jpg" alt="1970文创园A区">
+          </div>
+          <div class="sub">亮点速览</div>
+          <ul>
+            <li>工业风外立面、墙绘与灯光装置出片友好。</li>
+            <li>咖啡甜点与手作市集，周末/节日更热闹。</li>
+          </ul>
+          <div class="sub">建议玩法</div>
+          <ul>
+            <li>白天：美术展 → 文创店 → 咖啡甜点 → 街拍光影。</li>
+            <li>夜晚：市集/演出（以公告为准） → 轻食小聚 → 灯光装置打卡。</li>
+          </ul>
+          <div class="sub">旅行小贴士</div>
+          <ul>
+            <li>关注园区公众号/活动海报；热门时段停车紧张，建议打车。</li>
+            <li>下午至傍晚侧光层次好，夜景适合人像与城市感大片。</li>
+          </ul>
+        </article>
+
+        <!-- 韩国风情街 -->
+        <article class="card">
+          <h3>韩国风情街</h3>
+          <div class="tagline">异域餐饮 · 夜宵聚会 · 霓虹招牌与街景壁画</div>
+          <div class="gallery">
+            <img src="https://aos-comment.amap.com/B0GUML8OPX/comment/content_media_external_images_media_100002196_1741062518709_14508687.jpg" alt="韩国风情街招牌与街景">
+          </div>
+          <div class="sub">亮点速览</div>
+          <ul>
+            <li>韩式烤肉、炸鸡啤酒、年糕/糖饼等餐饮集中。</li>
+            <li>夜间氛围感强，适合朋友聚会与街拍。</li>
+          </ul>
+          <div class="sub">建议玩法</div>
+          <ul>
+            <li>美食路线：烤肉 → 拌饭/冷面 → 炸鸡啤酒 → 小甜品。</li>
+          </ul>
+          <div class="sub">旅行小贴士</div>
+          <ul>
+            <li>热门店晚间等位较久，建议错峰或提前到店取号。</li>
+            <li>口味偏重，搭配清爽饮品更舒服；人均中等偏上。</li>
+          </ul>
+        </article>
+
+        <!-- 鸡鸣阁（夜游） -->
+        <article class="card">
+          <h3>鸡鸣阁（夜游）</h3>
+          <div class="tagline">传统阁楼 · 夜景远眺 · 城市光带层次强</div>
+          <div class="gallery">
+            <img src="https://store.is.autonavi.com/showpic/e0990f75b93911b5d1fdf4fe3f2d52dc" alt="鸡鸣阁夜景外观">
+          </div>
+          <div class="sub">亮点速览</div>
+          <ul>
+            <li>夜色登楼，俯瞰灯火城市；阁影与河景同框出片。</li>
+          </ul>
+          <div class="sub">建议玩法</div>
+          <ul>
+            <li>夜景登阁建议 20:30—22:00 人流回落体验佳；准备手机三脚架更稳。</li>
+          </ul>
+          <div class="sub">旅行小贴士</div>
+          <ul>
+            <li>以现场开放时段为准；台阶与木踏步夜间注意防滑。</li>
+            <li>夜间拍摄请降低音量，注意不打扰周边居民。</li>
+          </ul>
+        </article>
+
+        <!-- 宾王夜市 -->
+        <article class="card">
+          <h3>宾王夜市</h3>
+          <div class="tagline">夜间美食与潮玩集市 · 市井烟火气</div>
+          <div class="gallery">
+            <img src="https://aos-comment.amap.com/B02431521U/comment/MVIMG_20250724_18195_1763478809333_11135084.jpg" alt="宾王夜市街景">
+            <img src="https://aos-comment.amap.com/B0G0ASTH3V/comment/FB69CA62_82EF_4971_9DDA_99E65563CBA5_L0_001_1439_1781_1732357335684_71951254.jpg" alt="宾王夜市档口与人流">
+          </div>
+          <div class="sub">亮点速览</div>
+          <ul>
+            <li>摊位密集、美食与小商品齐备；适合少量多样试吃与淘小物。</li>
+          </ul>
+          <div class="sub">建议玩法</div>
+          <ul>
+            <li>先逛后吃，锁定目标摊位再集中拔草；烤串/铁板/小海鲜/糖油粑粑/果茶。</li>
+          </ul>
+          <div class="sub">旅行小贴士</div>
+          <ul>
+            <li>傍晚至深夜最热闹；移动支付为主，礼貌小砍价。</li>
+            <li>优选现做现卖；肠胃敏感者注意搭配与分量。</li>
+          </ul>
+        </article>
+
+        <!-- 义乌天地 -->
+        <article class="card">
+          <h3>义乌天地</h3>
+          <div class="tagline">综合商业 · 餐饮与休闲补给 · 伴手礼采购</div>
+          <div class="gallery">
+            <img src="https://aos-comment.amap.com/B0J0VUZM5J/comment/content_media_external_file_100006494_1767090235592_03401676.jpg" alt="义乌天地商场内景">
+          </div>
+          <div class="sub">亮点速览</div>
+          <ul>
+            <li>品牌齐全、餐饮多样，旅途补给与逛街休闲首选。</li>
+          </ul>
+          <div class="sub">建议玩法</div>
+          <ul>
+            <li>早午茶/简餐补能量、伴手礼采购；亲子与简餐选择较多。</li>
+          </ul>
+          <div class="sub">旅行小贴士</div>
+          <ul>
+            <li>打车/公交便捷；停车收费以现场为准。</li>
+            <li>结合美团/大众点评寻找优惠，人均中等。</li>
+          </ul>
+        </article>
+
+        <!-- 月湖公园 -->
+        <article class="card">
+          <h3>月湖公园</h3>
+          <div class="tagline">湖景慢行 · 亲子友好 · 清晨柔光出片</div>
+          <div class="gallery">
+            <img src="https://store.is.autonavi.com/showpic/37c5ff4b3da373ebb6957ef3450fcdb5" alt="月湖公园湖畔">
+            <img src="https://store.is.autonavi.com/showpic/69d78b23dd8372f719647c1d3938094b" alt="月湖公园休憩平台">
+          </div>
+          <div class="sub">亮点速览</div>
+          <ul>
+            <li>环湖步道与观景平台，绿荫浓密，慢跑散步与亲子放风友好。</li>
+          </ul>
+          <div class="sub">建议玩法</div>
+          <ul>
+            <li>环湖小圈：步道 + 观景平台 + 柳岸；清晨柔光更出片。</li>
+          </ul>
+          <div class="sub">旅行小贴士</div>
+          <ul>
+            <li>早到人少且不晒；随身带水、穿轻便鞋；注意跑步晨练礼仪。</li>
+          </ul>
+        </article>
+
+        <!-- 义乌市博物馆（含暂停开放提示） -->
+        <article class="card">
+          <h3>义乌市博物馆（开放状态以现场为准）</h3>
+          <div class="tagline">了解商帮与小商品发展 · 城市变迁缩影</div>
+          <div class="gallery">
+            <img src="https://aos-comment.amap.com/B0IB9D90TO/comment/69ccc91907efc0b2ec14f7784658e01d_2048_2048_80.jpg" alt="义乌博物馆外观（状态以现场为准）">
+          </div>
+          <div class="sub">亮点速览</div>
+          <ul>
+            <li>通过图文、实物与场景展示，理解义乌商贸与市场变迁。</li>
+          </ul>
+          <div class="sub">建议玩法</div>
+          <ul>
+            <li>主题参观：商贸起源 → 市场成长 → 当代国际贸易，与商贸城行程形成“前后对照”。</li>
+          </ul>
+          <div class="sub">旅行小贴士</div>
+          <ul>
+            <li>关注开放时间与临时展信息；工作日人流更少。</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 行程区 -->
+    <section id="plan">
+      <div class="title"><h2>2.5日详细行程（第一天17:00到，第三天13:00离开）</h2><div class="barline"></div></div>
+      <div class="timeline">
+
+        <div class="day">
+          <div class="when">D1（抵达日）｜17:00 到达 → 夜市初体验 ✈️🧳🍢🌃</div>
+          <div class="slot">
+            <div class="time">17:00—18:00</div>
+            <div class="desc">抵达义乌市区，入住酒店（建议市中心/江滨一带，出行吃饭方便）。</div>
+          </div>
+          <div class="slot">
+            <div class="time">18:30—21:15</div>
+            <div class="desc"><span class="poi">宾王夜市</span>「轻放纵」：先逛后吃、少量多样；锁定目标摊位集中拔草（烤串/铁板/小海鲜/糖油粑粑/果茶）🍢🥤✨。</div>
+          </div>
+          <div class="slot">
+            <div class="time">21:30—22:45</div>
+            <div class="desc"><span class="poi">韩国风情街</span>夜宵与街拍：炸鸡啤酒/石锅拌饭收尾，拍摄霓虹店牌与街景 🍗🍺📸。</div>
+          </div>
+          <div class="slot">
+            <div class="time">交通建议</div>
+            <div class="desc">夜间以打车/网约车为主，省时省力。</div>
+          </div>
+        </div>
+
+        <div class="day">
+          <div class="when">D2（满天行程）｜商贸见识 + 文创打卡 + 古街夜游 + 鸡鸣阁夜景 🛍️🎨🏮🌌</div>
+          <div class="slot">
+            <div class="time">08:30—09:30</div>
+            <div class="desc">早餐（豆浆/面点/水果）。</div>
+          </div>
+          <div class="slot">
+            <div class="time">09:30—12:30</div>
+            <div class="desc"><span class="poi">义乌国际商贸城</span>目标清单式逛法：文具、家居、美妆配件、服饰辅料等；现场快递当日寄送 🛒🛍️。</div>
+          </div>
+          <div class="slot">
+            <div class="time">12:30—13:30</div>
+            <div class="desc">午餐（商贸城周边或<span class="poi">义乌天地</span>简餐）。</div>
+          </div>
+          <div class="slot">
+            <div class="time">14:00—16:30</div>
+            <div class="desc"><span class="poi">1970文创园</span>仓改文创：展览/市集/咖啡甜点；拍工业风装置与墙绘。</div>
+          </div>
+          <div class="slot">
+            <div class="time">17:00—19:00</div>
+            <div class="desc"><span class="poi">佛堂老街</span>古风慢游：牌坊—古戏台—沿河小景—手作小店。</div>
+          </div>
+          <div class="slot">
+            <div class="time">19:10—20:20</div>
+            <div class="desc"><span class="poi">韩国风情街</span>韩式晚餐（错峰）。</div>
+          </div>
+          <div class="slot">
+            <div class="time">20:40—22:00</div>
+            <div class="desc"><span class="poi">鸡鸣阁</span>夜景登楼：夜色灯火、风平云轻更适合登高观景与拍照。</div>
+          </div>
+          <div class="slot">
+            <div class="time">交通建议</div>
+            <div class="desc">打车为主；佛堂老街、文创园与鸡鸣阁相对分散，留足机动时间。</div>
+          </div>
+        </div>
+
+        <div class="day">
+          <div class="when">D3（半日）｜月湖公园晨间漫步 + 博物馆轻学游 + 商场收尾 🌅🌿🏛️🛍️</div>
+          <div class="slot">
+            <div class="time">08:30—09:50</div>
+            <div class="desc"><span class="poi">月湖公园</span>湖畔慢行：环湖步道、观景平台轻松走；清晨柔光更出片 🌿🌅。</div>
+          </div>
+          <div class="slot">
+            <div class="time">10:05—11:05</div>
+            <div class="desc"><span class="poi">义乌市博物馆</span>一小时梳理城市商业脉络（开放状态以现场为准）。</div>
+          </div>
+          <div class="slot">
+            <div class="time">11:20—12:20</div>
+            <div class="desc"><span class="poi">义乌天地</span>午间简餐 + 伴手礼补货。</div>
+          </div>
+          <div class="slot">
+            <div class="time">12:20—13:00</div>
+            <div class="desc">返程准备，前往车站/机场。</div>
+          </div>
+          <div class="slot">
+            <div class="time">可替换建议</div>
+            <div class="desc">若对博物馆兴趣一般，可改为「义乌天地慢逛/咖啡休整」，再 12:00 提前午餐。</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 通用贴士 -->
+    <section id="tips">
+      <div class="title"><h2>通用出行与支付小贴士</h2><div class="barline"></div></div>
+      <div class="card">
+        <ul>
+          <li>支付：移动支付为主（支付宝/微信），部分摊位支持现金。</li>
+          <li>通讯：与商贸城商户交换名片/社交账号，便于后续补货与议价。</li>
+          <li>交通：市区以打车/网约车效率最高；节假日拥堵需预留机动时间。</li>
+          <li>穿着：舒适步行鞋与轻装双肩包；夏季防晒补水，冬季注意保暖。</li>
+          <li>拍照：佛堂老街、文创园与鸡鸣阁夜景氛围佳；注意他人肖像权与店铺规定。</li>
+          <li>开放与票价：以现场公告为准；如遇临时闭园或活动改期，灵活调整行程。</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <a class="float" href="#plan">查看行程时间轴</a>
+
+  <footer>
+    <div class="wrap">
+      <div>© 义乌城市元旦游。图文仅供参考，开放时间与票价以现场公告为准。</div>
+    </div>
+  </footer>
+
+  <script>
+    // 简易平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const id=a.getAttribute('href').slice(1);
+        const el=document.getElementById(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'}); }
+      })
+    });
+
+    // 图片fallback（如加载失败则替换为占位图）
+    const placeholder = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMzIwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0IxQjZERSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LXNpemU9IjE2IiBmaWxsPSIjRTlFQkZGIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5JbWFnZSBTb3VyY2UgVW5hdmFpbGFibGU8L3RleHQ+PC9zdmc+';
+    document.querySelectorAll('img').forEach(img=>{
+      img.addEventListener('error',()=>{ img.src = placeholder; });
+    });
+
+    // 创建雪花和星星动画效果
+    function createSnowflakes() {
+      const snowflakeCount = 15; // 雪花数量
+      const starCount = 10; // 星星数量
+
+      // 创建雪花
+      for(let i = 0; i < snowflakeCount; i++) {
+        const snowflake = document.createElement('div');
+        snowflake.className = 'snowflake';
+        snowflake.textContent = '❄️';
+        snowflake.style.left = Math.random() * 100 + '%';
+        snowflake.style.fontSize = (Math.random() * 10 + 16) + 'px';
+        snowflake.style.animationDuration = (Math.random() * 10 + 10) + 's';
+        snowflake.style.animationDelay = Math.random() * 5 + 's';
+        snowflake.style.opacity = Math.random() * 0.3 + 0.2;
+        document.body.appendChild(snowflake);
+      }
+
+      // 创建星星
+      for(let i = 0; i < starCount; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        star.textContent = '✨';
+        star.style.left = Math.random() * 100 + '%';
+        star.style.fontSize = (Math.random() * 8 + 14) + 'px';
+        star.style.animationDuration = (Math.random() * 8 + 12) + 's';
+        star.style.animationDelay = Math.random() * 5 + 's';
+        star.style.opacity = Math.random() * 0.4 + 0.3;
+        document.body.appendChild(star);
+      }
+    }
+
+    // 页面加载完成后创建动画元素
+    window.addEventListener('load', createSnowflakes);
+  </script>
+</body>
+</html>
